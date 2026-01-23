@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
+:root {
+    --bg-color: #0d1117;
+    /* Un poco más profundo */
+    --card-bg: #161b22;
+    --accent-color: #00f2ff;
+    --accent-glow: rgba(0, 242, 255, 0.3);
+    --text-color: #e6edf3;
+    --secondary-text: #8b949e;
+    --border-color: #30363d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 50%, #1a1f29 0%, #0d1117 100%);
+    color: var(--text-color);
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    background-color: rgba(22, 27, 34, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--accent-color);
+    margin: 0 auto;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.navegacion a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.navegacion a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* --- SECCIÓN HERO (Tu tarjeta principal) --- */
+main section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    background: transparent !important;
+    border: none !important;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    letter-spacing: 5px;
+    color: var(--accent-color);
+    text-shadow: 0 0 20px var(--accent-glow);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* --- BOTONES (Redes Sociales) --- */
+.redes-sociales {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--accent-color);
+    padding: 12px 25px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    /* Menos redondeado para look futurista */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.redes-sociales a:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 25px var(--accent-glow);
+    transform: translateY(-5px);
+}
+
+/* --- SECCIÓN PROYECTOS (Centrada con fuente distinta) --- */
+#proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra horizontalmente */
+    justify-content: center;
+    /* Centra verticalmente si hay altura definida */
+    text-align: center;
+    /* Fuente diferente para esta sección */
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+}
+
+#proyectos h2 {
+    font-family: 'Orbitron', sans-serif;
+    /* Mantenemos Orbitron en el título para coherencia */
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.proyecto-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    /* Controla el ancho de los proyectos */
+    transition: transform 0.3s ease;
+}
+
+.proyecto-item:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-color);
+}
+
+.proyecto-item p {
+    /* Letra diferente para las descripciones */
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--secondary-text);
+    font-size: 1rem;
+}
+
+/* --- CONTENEDOR PRINCIPAL DE CONTACTO --- */
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+/* --- LA TARJETA DEL FORMULARIO --- */
+.formulario-card {
+    background-color: var(--card-bg);
+    /* El color #161b22 que ya usas */
+    border: 1px solid var(--accent-color);
+    /* Borde turquesa fino */
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+    /* Brillo tenue alrededor */
+}
+
+.formulario-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* --- ESTILO DE LOS CAMPOS (INPUTS) --- */
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background-color: #0d1117;
+    /* Fondo oscuro profundo */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 12px;
+    color: var(--accent-color);
+    /* El texto que escribes será cian */
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efecto cuando haces clic para escribir */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* --- BOTONES --- */
+.botones-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-enviar {
+    flex: 1;
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.btn-enviar:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.btn-limpiar {
+    flex: 1;
+    background: transparent;
+    color: #ff4b4b;
+    /* Rojo para advertir */
+    border: 1px solid #ff4b4b;
+    padding: 12px;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.btn-limpiar:hover {
+    background: #ff4b4b;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 75, 75, 0.4);
+}
+
+/* --- FOOTER MEJORADO --- */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #090c10;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
