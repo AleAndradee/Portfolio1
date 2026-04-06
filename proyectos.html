@@ -34,6 +34,22 @@
                 </div>
             </div>
         </section>
+        <section id="proyectos">
+            <div class="proyecto-item" onclick="abrirModal('proyecto2')">
+                <h3>Segundo Proyecto</h3>
+                <p>Haz clic para ver la vista previa.</p>
+            </div>
+
+            <div id="modalProyecto" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                    <h2 id="modalTitulo">Título del Proyecto</h2>
+                    <img id="modalImagen" src="" alt="Vista Previa">
+                    <p id="modalDescripcion">Descripción detallada aquí...</p>
+                    <a id="modalLink" href="#" target="_blank" class="btn-github">VER EN GITHUB</a>
+                </div>
+            </div>
+        </section>
     </main>
     <script>
         function abrirModal(id) {
@@ -50,6 +66,14 @@
                 desc.innerText = "Esta es una vista previa del proyecto de Carnaval de Cádiz. Incluye secciones dinámicas y diseño responsivo.";
                 link.href = "https://github.com/AleAndradee/WebCarnaval";
             }
+
+            if (id === 'proyecto2') {
+                titulo.innerText = "Web básica";
+                imagen.src = "Imagenes/Captura de pantalla 2026-04-06 165501.png";
+                desc.innerText = "Este proyecto es bastante básico es una página web simple con solo HTML.";
+                link.href = "https://github.com/AleAndradee/PagWebCompleta2";
+            }
+
 
             modal.style.display = "block";
         }
