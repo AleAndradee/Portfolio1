@@ -2,7 +2,6 @@
 
 :root {
     --bg-color: #0d1117;
-    /* Un poco más profundo */
     --card-bg: #161b22;
     --accent-color: #00f2ff;
     --accent-glow: rgba(0, 242, 255, 0.3);
@@ -30,9 +29,7 @@ body {
 header {
     background-color: rgba(22, 27, 34, 0.7);
     backdrop-filter: blur(12px);
-    border: 1px solid var(--border-color);
     border-bottom: 2px solid var(--accent-color);
-    margin: 0 auto;
     width: 100%;
     position: sticky;
     top: 0;
@@ -61,16 +58,9 @@ header {
     text-shadow: 0 0 10px var(--accent-color);
 }
 
-/* --- SECCIÓN HERO (Tu tarjeta principal) --- */
-main section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    text-align: center;
-    background: transparent !important;
-    border: none !important;
+/* --- CONTENIDO PRINCIPAL --- */
+main {
+    padding: 40px 20px;
 }
 
 h1 {
@@ -79,206 +69,192 @@ h1 {
     letter-spacing: 5px;
     color: var(--accent-color);
     text-shadow: 0 0 20px var(--accent-glow);
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
-.subtitulo {
-    color: var(--secondary-text);
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 30px;
-}
-
-/* --- BOTONES (Redes Sociales) --- */
-.redes-sociales {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.redes-sociales a {
-    text-decoration: none;
-    background-color: transparent;
-    color: var(--accent-color);
-    padding: 12px 25px;
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    /* Menos redondeado para look futurista */
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.redes-sociales a:hover {
-    background-color: var(--accent-color);
-    color: #000;
-    box-shadow: 0 0 25px var(--accent-glow);
-    transform: translateY(-5px);
-}
-
-/* --- SECCIÓN PROYECTOS (Centrada con fuente distinta) --- */
+/* --- SECCIÓN PROYECTOS --- */
 #proyectos {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centra horizontalmente */
     justify-content: center;
-    /* Centra verticalmente si hay altura definida */
     text-align: center;
-    /* Fuente diferente para esta sección */
-    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-}
-
-#proyectos h2 {
-    font-family: 'Orbitron', sans-serif;
-    /* Mantenemos Orbitron en el título para coherencia */
-    color: var(--accent-color);
-    margin-bottom: 30px;
-    text-transform: uppercase;
 }
 
 .proyecto-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    padding: 25px 0 0 0;
+    border-radius: 12px;
     width: 100%;
     max-width: 700px;
-    /* Controla el ancho de los proyectos */
-    transition: transform 0.3s ease;
-}
-
-.proyecto-item:hover {
-    transform: scale(1.02);
-    border-color: var(--accent-color);
-}
-
-.proyecto-item p {
-    /* Letra diferente para las descripciones */
-    font-family: 'Courier New', Courier, monospace;
-    color: var(--secondary-text);
-    font-size: 1rem;
-}
-
-/* --- CONTENEDOR PRINCIPAL DE CONTACTO --- */
-.contacto-container {
+    /* Aquí recuperamos el tamaño que se perdió */
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    min-height: 80vh;
+    overflow: hidden;
+    cursor: pointer;
+    /* Esto pone la "manita" al pasar el ratón */
 }
 
-/* --- LA TARJETA DEL FORMULARIO --- */
-.formulario-card {
-    background-color: var(--card-bg);
-    /* El color #161b22 que ya usas */
-    border: 1px solid var(--accent-color);
-    /* Borde turquesa fino */
-    border-radius: 15px;
-    padding: 40px;
-    width: 100%;
-    max-width: 550px;
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
-    /* Brillo tenue alrededor */
+/* --- RE-ACTIVANDO LAS ANIMACIONES --- */
+.proyecto-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+    background: rgba(0, 242, 255, 0.05);
 }
 
-.formulario-card h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-align: left;
+.proyecto-item:hover .proyecto-imagen {
+    filter: brightness(1);
+    border-top-color: var(--accent-color);
 }
 
-/* --- ESTILO DE LOS CAMPOS (INPUTS) --- */
-.input-group {
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    font-family: 'Rajdhani', sans-serif;
-    color: var(--text-color);
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    background-color: #0d1117;
-    /* Fondo oscuro profundo */
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    padding: 12px;
+.proyecto-item:hover h3 {
     color: var(--accent-color);
-    /* El texto que escribes será cian */
-    font-family: 'Rajdhani', sans-serif;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Ajustes de imagen y texto para que sigan centrados */
+.proyecto-imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.7);
+    transition: all 0.4s ease;
+    border-top: 1px solid var(--border-color);
+}
+
+.proyecto-item h3,
+.proyecto-item p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.proyecto-item p {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--secondary-text);
     font-size: 1rem;
-    outline: none;
+    margin: 0 20px 20px 20px;
+    /* Margen manual para compensar el 0 de la caja */
+}
+
+/* Estilo de la imagen del proyecto (ANCHO TOTAL) */
+.proyecto-imagen {
+    width: 100%;
+    /* Ocupa el 100% del contenedor div */
+    height: auto;
+    /* Altura automática según la imagen */
+    display: block;
+    /* Elimina espacios inferiores */
+    filter: brightness(0.7);
+    transition: all 0.4s ease;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- EFECTOS HOVER --- */
+.proyecto-link:hover .proyecto-item {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.proyecto-link:hover .proyecto-imagen {
+    filter: brightness(1);
+    border-top-color: var(--accent-color);
+}
+
+.proyecto-link:hover h3 {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* --- ESTILOS DEL MODAL --- */
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    /* Desenfoque de fondo */
+}
+
+.modal-contenido {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--secondary-text);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: var(--accent-color);
+}
+
+#modalImagen {
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+}
+
+.btn-github {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    color: #000;
+    background-color: var(--accent-color);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 15px var(--accent-glow);
     transition: 0.3s;
 }
 
-/* Efecto cuando haces clic para escribir */
-.input-group input:focus,
-.input-group textarea:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-glow);
+.btn-github:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--accent-color);
 }
 
-/* --- BOTONES --- */
-.botones-form {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-.btn-enviar {
-    flex: 1;
-    background: transparent;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    padding: 12px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.4s;
-}
-
-.btn-enviar:hover {
-    background: var(--accent-color);
-    color: #000;
-    box-shadow: 0 0 20px var(--accent-glow);
-}
-
-.btn-limpiar {
-    flex: 1;
-    background: transparent;
-    color: #ff4b4b;
-    /* Rojo para advertir */
-    border: 1px solid #ff4b4b;
-    padding: 12px;
-    font-family: 'Orbitron', sans-serif;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.4s;
-}
-
-.btn-limpiar:hover {
-    background: #ff4b4b;
-    color: white;
-    box-shadow: 0 0 15px rgba(255, 75, 75, 0.4);
-}
-
-/* --- FOOTER MEJORADO --- */
+/* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 60px 20px;
@@ -286,4 +262,5 @@ footer {
     color: var(--secondary-text);
     font-size: 0.9rem;
     border-top: 1px solid var(--border-color);
+    margin-top: 50px;
 }

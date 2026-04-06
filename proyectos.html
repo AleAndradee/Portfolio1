@@ -19,21 +19,57 @@
 
         <section id="proyectos">
             <h2>Mis Proyectos</h2>
-
-            <div class="proyecto-item">
+            <div class="proyecto-item" onclick="abrirModal('proyecto1')">
                 <h3>Primer Proyecto</h3>
-                <p>Una página web de estilo libre.</p>
+                <p>Haz clic para ver la vista previa.</p>
             </div>
 
-            <div class="proyecto-item">
-                <h3>Segundo Proyecto</h3>
-                <p>Una pagina web completa.</p>
+            <div id="modalProyecto" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                    <h2 id="modalTitulo">Título del Proyecto</h2>
+                    <img id="modalImagen" src="" alt="Vista Previa">
+                    <p id="modalDescripcion">Descripción detallada aquí...</p>
+                    <a id="modalLink" href="#" target="_blank" class="btn-github">VER EN GITHUB</a>
+                </div>
             </div>
         </section>
     </main>
+    <script>
+        function abrirModal(id) {
+            const modal = document.getElementById("modalProyecto");
+            const titulo = document.getElementById("modalTitulo");
+            const imagen = document.getElementById("modalImagen");
+            const desc = document.getElementById("modalDescripcion");
+            const link = document.getElementById("modalLink");
 
-    <footer>
-        <p>&copy; 2024 Alejandro Andrade Morales</p>
-    </footer>
+            // Datos del proyecto 1
+            if (id === 'proyecto1') {
+                titulo.innerText = "La Web del Carnaval";
+                imagen.src = "Imagenes/Captura de pantalla 2026-04-06 161334.png";
+                desc.innerText = "Esta es una vista previa del proyecto de Carnaval de Cádiz. Incluye secciones dinámicas y diseño responsivo.";
+                link.href = "https://github.com/AleAndradee/WebCarnaval";
+            }
+
+            modal.style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modalProyecto").style.display = "none";
+        }
+
+        // Cerrar si se pulsa fuera de la caja
+        window.onclick = function (event) {
+            const modal = document.getElementById("modalProyecto");
+            if (event.target == modal) {
+                cerrarModal();
+            }
+        } 
+    </script>
+</body>
+
+<footer>
+    <p>&copy; 2024 Alejandro Andrade Morales</p>
+</footer>
 
 </html>
